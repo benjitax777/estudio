@@ -1,37 +1,78 @@
-print("Hola bienvenidos a Cesar’s Pizza")
-print("este es el menu que tenemos")
-#Menu
-print("opcion 1. Pizza Napolitana")
-print("opcion 2. Pizza De Queso")
-print("opcion 3. Pizza De Peperoni")
-print("opcion 4. Pizza De Champiñon")
-print("opcion 5. Pizza Hawaiana")
-opcion= int(input("eliga una opcion de  pizzas "))
-cantidad = int(input("Cuantas pizzas se va a llevar "))
-if opcion == 1:
-    precio= 6000
-    print("una pizza Napolitana costaria:", precio)
-elif opcion == 2:
-    precio = 6000
-    print("una pizza Queso costaria : ", precio)
-elif opcion ==3:
-    precio= 6500
-    print("una pizza de Peperoni costaria: ", precio)
-elif opcion ==4:
-    precio = 7000
-    print("Una pizza de Champiñon costaria : ", precio)
-elif opcion ==5:
-    precio = 7500
-    print("Una pizza Hawaiana costaria : ", precio)
-else:
-    print("elija una opcion correcta")
-neto = precio * cantidad
+### listas ###
 
-iva = neto * 0.19
+my_list = list()
+my_other_list ={}
 
-total = neto + iva
-print(f"Neto:     ${neto}")
-print(f"Iva:     ${iva}")
-print(f"Total:   ${total}")
+print(len(my_list))
+
+my_list = [18, 15, 8, 39, 18, 22, 1]
+
+print(my_list)
+print(len(my_list))
+
+my_other_list = [18, 1.77, "benjamin", "Saez"]
+print(type(my_list))
+print(type(my_other_list))
+
+print(my_other_list [0])
+print(my_other_list [1])
+print(my_other_list [-1])
+print(my_other_list [-4])
+print(my_list.count(18))#El Count se utiliza para contar elementos de la lista
+#print(my_other_list [4]) IndexError
+#print(my_other_list [-5]) IndexError
+age, height, name, surname= my_other_list
+print(name)
+
+name, height, age, surname =my_other_list[2], my_other_list[1], my_other_list[0], my_other_list[3]
+print(age)
+
+print(my_list + my_other_list)
+#print(my_list - my_other_list)#Error
 
 
+
+my_other_list.append("Benjitax")
+print(my_other_list)
+
+my_other_list.insert(1, "Verde")
+print(my_other_list)
+
+my_other_list[1] = "Rojo"
+print(my_other_list)
+
+my_other_list.remove("Rojo")
+print(my_other_list)
+
+my_list.remove(18)#Remove sirve para eliminar un elemento 
+print(my_list)
+
+print(my_list.pop())
+
+
+
+
+my_pop_element = my_list.pop(2)
+print(my_pop_element)
+print(my_list)
+
+del my_list[2]#Del elimina por indice
+print(my_list)
+
+my_new_list = my_list.copy()
+
+my_list.clear()
+print(my_list)
+print(my_new_list)
+my_new_list.reverse()
+print(my_new_list)
+
+my_new_list.sort()
+print(my_new_list)
+
+print(my_new_list[1:3])
+
+
+my_list = "hola Python"
+print(my_list)
+print(type((my_list)))
