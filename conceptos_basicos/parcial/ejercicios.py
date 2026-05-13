@@ -38,7 +38,7 @@ else:
         else:
             print("credito rechazado")
 """
-
+"""
 nombre=input("ingrese su nombre ")
 if not nombre or not nombre.replace(" ","").isalpha():
     print("Error: nombre no valido")
@@ -65,9 +65,32 @@ else:
             print(f"Monto final: ${monto_final}")
         else:
             print(f"no hay descuento tienes que pagar: {monto}")
-            
+   """
+nombre=input("Ingrese su nombre ")
+patente=(input("ingrese su patente "))
+if len(patente) != 6:
+    print("ingrese una patente correcta por favor")
+else:
+    vehiculo=input("Ingrese su tipo de vehiculo ").lower()
+    horas=int(input("Ingrese las horas en la que estuvo estacionado "))
+    if vehiculo =="auto":
+        costo= 1500 * horas
+         if horas >8:
+             costo= costo -(costo * 0.20)
+    print(f"{nombre}, la patente {patente} debe pagar: ${costo}")
+    elif vehiculo == "moto":
+        costo= 800 * horas
+        if horas > 8:
+            costo=costo - (costo * 0.20)
+    print(f"{nombre}, la patente {patente} debe pagar: ${costo}")
+    elif vehiculo== "camion":
+    costo= 3000 * horas
+        if horas > 8:
+            costo= costo - (costo * 0.20)
+    print(f"{nombre}, la patente {patente} debe pagar: ${costo}")
+else:
+    print("tipo de vehiculo no reconocido")
 
-
-
+v
 
 

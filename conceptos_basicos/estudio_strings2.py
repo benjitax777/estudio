@@ -1,5 +1,5 @@
 ### Strings ###
-
+"""
 my_string = "Mi string"
 my_other_string = "Mi otro String"
 
@@ -25,7 +25,7 @@ print("mi nombre es {} {} y mi edad es {}".format(name, surname, age))
 print("mi nombre es %s %s y mi edad es %d " %(name, surname, age))
 print(f"mi nombre es {name} {surname} y mi edad es {age}")
 
-
+"""
 # Desempaquetado de caractares
 language = "python"
 a , b, c, d, e, f= language
