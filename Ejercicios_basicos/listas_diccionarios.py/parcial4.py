@@ -1,23 +1,3 @@
-# Lista general de socios (comienza con registros para pruebas)
-
-
-from typing import clear_overloads
-
-
-lista_socios = [
-    {"rut": "111-1", "nombre": "Tomas Marin", "edad": 25, "plan": "Anual", "pago_pendiente": 0.0},
-    {"rut": "222-2", "nombre": "Ana Lopez", "edad": 17, "plan": "Mensual", "pago_pendiente": 35000.0},
-    {"rut": "333-3", "nombre": "Luis Silva", "edad": 40, "plan": "Vip", "pago_pendiente": 0.0}
-]
-
-# Diccionario de tarifas base fijas (¡No modificar su estructura!)
-# Plan: [Precio_Base, Permite_Menores_Edad (True/False)]
-tarifas_planes = {
-    "Mensual": [35000.0, True],
-    "Anual": [29990.0, True],
-    "Vip": [55000.0, False]  # El plan VIP exige ser mayor de edad (>= 18)
-}
-
 def repuesta_de_opcion():
     print("***MENU PRINCIPAL ***")
     print("1.-Registrar Socio\n 2.-Buscar socio\n 3.- Abonar a Deuda\n 4.-Expulsar Socio\n 5.- Mostar reporte de socios\n 6.- Salir ")
@@ -66,7 +46,7 @@ def registar_socio(lista):
     clave_plan=validacion_plan(plan,tarifas_planes)
     if clave_plan is None:
         print("Error: No existe ese plan ")
-        return
+        return 0
     precio_base, permite_menores = tarifas_planes[clave_plan]
     if not permite_menores and edad < 18:
         print(f"Error: El plan {clave_plan} exige ser mayor de edad")
@@ -81,7 +61,13 @@ def registar_socio(lista):
     }
     lista.append(nuevo_socio)
     print(f"Socio registrado con exito! pago pendiente: ${precio_base:,.0f}".replace(",","."))
-  
+def buscar_socio(lista, rut_buscar):
+    for i in range(len(lista)):
+        if lista[i]["rut"].strip() == rut_buscar.strip():
+            return i
+    return -1
+
+
 
     
 
@@ -103,9 +89,16 @@ while True:
         print("Gracias por ocupar el progrmaa ")
         break
     if opcion == 1:
-
-
-    
+        registar_socio(lista_socios)
+    elif opcion == 2:
+        rut_buscar=str(input("Ingrese el rut: "))
+        valor=buscar_socio(lista_socios, rut_buscar)
+        if valor !=-1:
+             print(f"el socicio se encontro el posicion: {valor}")
+             
+        else:
+           
+            print("Error: no existe ese socio")
 
 
 
