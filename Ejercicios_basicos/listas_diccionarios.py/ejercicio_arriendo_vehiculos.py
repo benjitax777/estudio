@@ -26,5 +26,11 @@ def registar_arriendo(lista, dicc_tarifas):
     except ValueError:
         print("Ingrese un valor entero")
         return
-    clave_vehiculo=obter_clave_auto(tipo_auto,tarifas_vehiculos)
-    auto= tarifas_vehiculos[clave_vehiculo]
+    clave_vehiculo=obter_clave_auto(tipo_auto,dicc_tarifas)
+    if clave_vehiculo == None:
+        print("Error: No existe ese vehiculo")
+        return
+
+    
+    auto=dicc_tarifas[clave_vehiculo]
+    print(auto)
