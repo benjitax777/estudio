@@ -63,9 +63,9 @@ def buscar_por_genero(genero_buscado):
     encontrado=False
     for titulos in biblioteca:
         if biblioteca[titulos][2].lower() == genero_buscado.lower():
-            caca=biblioteca[titulos][0]
-            autor=biblioteca[titulos][1]
-            print(f"Título: {caca}, Autor: {autor}")
+            titulo=biblioteca[titulos][0]#Se agrego titulo una variable para guardar el titulo del dicionnario para asi imprimirlo de manera mas sencilla
+            autor=biblioteca[titulos][1]#Se agrego la variable autor para guardar el autor y imprimirlo, ya que se selecciono el lugar donde va el autor 
+            print(f"Título: {titulo}, Autor: {autor}")
             encontrado=True
     if not encontrado:
 

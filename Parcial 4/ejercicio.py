@@ -48,7 +48,7 @@ while True:
     elif opcion =="2":
         categoria_producto=input("Ingrese la categoria del producto: ").lower()
         descuento=int(input("Ingrese el descuento: "))
-        aplicar_descuento(categoria_producto,descuento)
+        
         exito=aplicar_descuento(categoria_producto, descuento) #Se guarda en una variable para que se evalue porque la funcion es un codigo y no se puede evaluar si es verdadera o false
         if exito == True:#Se evalua en el menu si se encontro la categoria del producto
             print("Descuento aplicado correctamente")#imprime si fue True
